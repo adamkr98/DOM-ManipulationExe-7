@@ -11,6 +11,7 @@ let calculatorFrame = document.createElement("div");
 let displayedInput = document.createElement("div");
     calculatorFrame.appendChild(displayedInput);
     displayedInput.classList.add("displayedInput");
+   
 
 let caracterFieldsContainer = document.createElement("div");
     calculatorFrame.appendChild(caracterFieldsContainer);
@@ -23,18 +24,22 @@ let caracterFieldsContainer = document.createElement("div");
             let lftParenth = document.createElement("div");
                 topRowContainer.appendChild(lftParenth);
                 lftParenth.classList.add("lftParenth");
+                lftParenth.innerHTML = "(";
 
             let rgParenth = document.createElement("div");
                 topRowContainer.appendChild(rgParenth);
-                lftParenth.classList.add("lftParenth");
+                rgParenth.classList.add("rgParenth");
+                rgParenth.innerHTML = ")";
 
             let percent= document.createElement("div");
                 topRowContainer.appendChild(percent);
-                lftParenth.classList.add("lftParenth");
+                percent.classList.add("percent");
+                percent.innerHTML = "%";
 
             let ac = document.createElement("div");
                 topRowContainer.appendChild(ac);
-                lftParenth.classList.add("lftParenth");
+                ac.classList.add("ac");
+                ac.innerHTML = "AC";
        
     let numberValuesWrapper = document.createElement("div");
         caracterFieldsContainer.appendChild(numberValuesWrapper);
@@ -58,10 +63,13 @@ let caracterFieldsContainer = document.createElement("div");
 
             let seven = document.createElement("div");
                 seven.classList.add("seven");
+                seven.innerHTML = "7";
             let eight = document.createElement("div");
                 eight.classList.add("eight");
+                eight.innerHTML = "8";
             let nine = document.createElement("div");
                 nine.classList.add("nine");
+                nine.innerHTML = "9";
 
                 let valuesRow2 = document.createElement("div");
                 numberValuesWrapper1.appendChild(valuesRow2);
@@ -69,10 +77,13 @@ let caracterFieldsContainer = document.createElement("div");
 
             let four = document.createElement("div");
                 four.classList.add("four");
+                four.innerHTML = "4";
             let five = document.createElement("div");
                 five.classList.add("five");
+                five.innerHTML = "5";
             let six = document.createElement("div");
                 six.classList.add("six");
+                six.innerHTML = "6";
 
                 let valuesRow3 = document.createElement("div");
                 numberValuesWrapper1.appendChild(valuesRow3);
@@ -80,10 +91,13 @@ let caracterFieldsContainer = document.createElement("div");
 
             let one = document.createElement("div");
                 one.classList.add("one");
+                one.innerHTML = "1";
             let two = document.createElement("div");
                 two.classList.add("two");
+                two.innerHTML = "2";
             let three = document.createElement("div");
                 three.classList.add("three");
+                three.innerHTML = "3";
 
                 let valuesRow4 = document.createElement("div");
                 numberValuesWrapper1.appendChild(valuesRow4);
@@ -91,36 +105,94 @@ let caracterFieldsContainer = document.createElement("div");
 
             let zero = document.createElement("div");
                 zero.classList.add("zero");
+                zero.innerHTML = "0";
             let point = document.createElement("div");
                 point.classList.add("point");
+                point.innerHTML = ".";
             let equal = document.createElement("div");
                 equal.classList.add("equal");
+                equal.innerHTML = "=";
 
             valuesRow1.append(nine, eight, seven);
             valuesRow2.append(four, five, six);
             valuesRow3.append(one, two, three);
             valuesRow4.append(zero, point, equal);
 
+           
 
-    let divide = document.createElement("div");
-        operationsContainer.appendChild(divide);
-        divide.classList.add("divide");
+           
 
-    let multiply = document.createElement("div");
-        operationsContainer.appendChild(multiply);
-        multiply.classList.add("multiply");
+            // displayedInput.value =
 
-    let substract = document.createElement("div");
-        operationsContainer.appendChild(substract);
-        substract.classList.add("substract");
+
+           
+            
+
+
+
+            // let 
+
+            // let addition = () => {
+            //     let a = parseInt(prompt());
+            //     let b = parseInt(prompt());
+        
+            //    console.log(a, b)
+            // }
+            
+
+            //when nb clicked adds it to an array
+            //
+
+
+    let div = document.createElement("div");
+        operationsContainer.appendChild(div);
+        div.classList.add("divide");
+        div.innerHTML = "%";
+
+    let multi = document.createElement("div");
+        operationsContainer.appendChild(multi);
+        multi.classList.add("multiply");
+        multi.innerHTML = "X";
+
+    let subst = document.createElement("div");
+        operationsContainer.appendChild(subst);
+        subst.classList.add("substract");
+        subst.innerHTML = "-";
 
     let add = document.createElement("div");
         operationsContainer.appendChild(add);
         add.classList.add("add");
+        add.innerHTML = "+";
+
+
+
+        displayedInput.addEventListener("submit", () => {
+
+        })
+
+        let addition = (a, b) => {
+            let sum = a + b;
+            return sum;
+        };
+
+        let substract = (a, b) => {
+            let diff = a - b;
+            return diff;
+        };
+
+        let divide = (a, b) => {
+            let divi = a / b;
+            return divi;
+        }
+
+        let multiply = (a, b) => {
+            let produ = a * b;
+            return produ;
+        }
     
 
     body.style = `
-    border: blue solid 2px;
+    // border: blue solid 2px;
 
     width: 100%;
     height: 100vh;
@@ -132,7 +204,7 @@ let caracterFieldsContainer = document.createElement("div");
     `
 
     container.style = `
-    border: red solid 2px;
+    // border: red solid 2px;
     border-radius: 0.5rem;
 
     width: 50%;
@@ -161,58 +233,66 @@ let caracterFieldsContainer = document.createElement("div");
     `
     
     caracterFieldsContainer.style = `
-    border: green solid 2px;
-    width: 90%;
-    height: 60%;
+    border: pink solid 2px;
+    width: 91%;
+    height: 70%;
 
     display: flex;
     flex-direction: column; 
+    
     `
 
     topRowContainer.style = `
-    border: red solid 2px;
+    // border: red solid 2px;
     width: 100%;
     height: 20%;
     
     display: flex;
-    justify-content: space-between;
-    `
-
-    lftParenth.style = `
-    border: black solid 2px;
-    width: 23%;
-    height: 100%;
-
-    display: flex;
-
-    `
-    rgParenth.style = `
-    border: black solid 2px;
-    width: 23%;
-    height: 100%;
-
-    display: flex;
-    `
-    percent.style = `
-    border: black solid 2px;
-    width: 23%;
-    height: 100%;
-
-    display: flex;
+    justify-content: space-around;
     
     `
 
-    ac.style = `
-    border: black solid 2px;
-    width: 23%;
+    lftParenth.style = `
+    background-color: #DADCE0;
+    width: 22%;
     height: 100%;
 
     display: flex;
+    justify-content: center;
+    align-items: center;
 
+    `
+    rgParenth.style = `
+    background-color: #DADCE0;
+    width: 22%;
+    height: 100%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    `
+    percent.style = `
+    background-color: #DADCE0;
+    width: 22%;
+    height: 100%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    `
+
+    ac.style = `
+    background-color: #DADCE0;
+    width: 22%;
+    height: 100%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
     `
 
     numberValuesWrapper.style = `
-    border: brown solid 2px;
+    // border: brown solid 2px;
     width: 100%;
     height: 20rem;
 
@@ -222,163 +302,223 @@ let caracterFieldsContainer = document.createElement("div");
     `
 
     numberValuesWrapper1.style = `
-    border: blue dashed 4px;
+    // border: blue dashed 4px;
     width: 100%;
     height: 100%;
 
     display: flex;
     flex-direction: column;
-    
+    justify-content: space-around; 
     `
 
     valuesRow1.style = `
-    border: red solid 2px;
+    // border: red solid 2px;
     width: 100%;
-    height: 23%;
+    height: 22%;
 
     display: flex;
+    justify-content: space-around;
+    
     `
 
         zero.style = `
-        border: black solid 2px;
-        width: 33%;
+        background-color: #F1F3F4;
+        width: 30%;
         height: 100%;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
         `
 
         one.style = `
-        border: black solid 2px;
-        width: 33%;
+        background-color: #F1F3F4;
+        width: 30%;
         height: 100%;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
         `
 
         two.style = `
-        border: black solid 2px;
-        width: 33%;
+        background-color: #F1F3F4;
+        width: 30%;
         height: 100%;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
         `
 
         three.style = `
-        border: black solid 2px;
-        width: 33%;
+        background-color: #F1F3F4;
+        width: 30%;
         height: 100%;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
         `
 
         four.style = `
-        border: black solid 2px;
-        width: 33%;
+        background-color: #F1F3F4;
+        width: 30%;
         height: 100%;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
         `
 
         five.style = `
-        border: black solid 2px;
-        width: 33%;
+        background-color: #F1F3F4;
+        width: 30%;
         height: 100%;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
         `
 
         six.style = `
-        border: black solid 2px;
-        width: 33%;
+        background-color: #F1F3F4;
+        width: 30%;
         height: 100%;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
         `
 
         seven.style = `
-        border: black solid 2px;
-        width: 33%;
+        background-color: #F1F3F4;
+        width: 30%;
         height: 100%;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
         `
 
         eight.style = `
-        border: black solid 2px;
-        width: 33%;
+        background-color: #F1F3F4;
+        width: 30%;
         height: 100%;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
         `
 
         nine.style = `
-        border: black solid 2px;
-        width: 33%;
-        height: 100%;
+        background-color: #F1F3F4;
+        width: 30%;
+        height: 98%;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
         `
 
         point.style = `
-        border: black solid 2px;
-        width: 33%;
-        height: 100%;
+        background-color: #F1F3F4;
+        width: 30%;
+        height: 98%;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
         `
 
         equal.style = `
-        border: black solid 2px;
-        width: 33%;
-        height: 100%;
+        background-color: #F1F3F4;
+        width: 30%;
+        height: 98%;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
         `
 
         valuesRow2.style = `
-        border: red solid 2px;
+        // border: red solid 2px;
         width: 100%;
-        height: 23%;
+        height: 22%;
 
         display: flex;
+        justify-content: space-around;
         `
 
         valuesRow3.style = `
-        border: red solid 2px;
+        // border: red solid 2px;
         width: 100%;
-        height: 23%;
+        height: 22%;
 
         display: flex;
+        justify-content: space-around;
         `
 
         valuesRow4.style = `
-        border: red solid 2px;
+        // border: red solid 2px;
         width: 100%;
-        height: 23%;
+        height: 22%;
 
         display: flex;
+        justify-content: space-around;
+        align-content: center;
         `
 
     operationsContainer.style = `
-    border: blue solid 2px;
-    width: 20%;
+    // border: blue solid 2px;
+    width: 32%;
     height: 100%;
 
     display: flex;
     flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
 
     `
 
         divide.style = `
-        border: black solid 2px;
-        width: 100%;
-        height: 25%;
+        background-color: #DADCE0;
+        width: 96%;
+        height: 22%;
 
         display: flex;
-
+        justify-content: center;
+        align-items: center;
         `
 
         multiply.style = `
-        border: black solid 2px;
-        width: 100%;
-        height: 25%;
+        background-color: #DADCE0;
+        width: 96%;
+        height: 22%;
 
         display: flex;
-
+        justify-content: center;
+        align-items: center;
         `
 
         substract.style = `
-         border: black solid 2px;
-        width: 100%;
-        height: 25%;
+        background-color: #DADCE0;
+        width: 96%;
+        height: 22%;
 
         display: flex;
-        
+        justify-content: center;
+        align-items: center;
         `
 
         add.style = `
-        border: black solid 2px;
-        width: 100%;
-        height: 25%;
+        background-color: #DADCE0;
+        width: 96%;
+        height: 22%;
 
         display: flex;
-
+        justify-content: center;
+        align-items: center;
         `
 
 
